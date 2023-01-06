@@ -14,9 +14,15 @@ import { AuthContext } from "./contexts/auth";
 const AppRoutes = () => {
 const [user, setUser] = useState(null);
 
-const login = (email, password) => {};
+const login = (email, password) => {
+    console.log("login auth", { email, password});
+    setUser({ id: "123", email });
+};
 
-const logout = () => {};
+const logout = () => {
+    console.log("logout")
+};
+
     return(
         <Router>
             <AuthContext.Provider value={{authenticated: !!user, user, login}}>
